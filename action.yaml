@@ -1,0 +1,20 @@
+
+name: My Custom Action
+description: A simple custom GitHub Action
+
+author: Binil
+
+inputs:
+  username:
+    description: Enter your name
+    required: true
+    default: Binil
+
+runs:
+  using: composite
+  steps:
+    - name: Print Welcome Message
+      shell: bash
+      run: |
+        echo "Hello ${{ inputs.username }}!"
+        echo "Welcome to my custom GitHub Action"
