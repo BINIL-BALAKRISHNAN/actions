@@ -1,0 +1,24 @@
+
+name: Test My Custom Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test Binil Action
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download repository code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Execute your custom action
+      - name: Run Binil Custom Action
+        uses: ./
+        with:
+          username: Rahul
